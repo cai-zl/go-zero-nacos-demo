@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 
-	"go-zero-nacos-demo/internal/config"
-	"go-zero-nacos-demo/internal/server"
-	"go-zero-nacos-demo/internal/svc"
-	"go-zero-nacos-demo/user"
+	"go-zero-nacos-demo/user-rpc/internal/config"
+	"go-zero-nacos-demo/user-rpc/internal/server"
+	"go-zero-nacos-demo/user-rpc/internal/svc"
+	"go-zero-nacos-demo/user-rpc/user"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/service"
@@ -20,6 +20,7 @@ var configFile = flag.String("f", "etc/user.yaml", "the config file")
 
 func main() {
 	flag.Parse()
+
 	var bootstrapConfig config.BootstrapConfig
 	conf.MustLoad(*configFile, &bootstrapConfig)
 
@@ -42,7 +43,7 @@ func main() {
 	ctx := svc.NewServiceContext(c)
 
 	s := zrpc.MustNewServer(c.RpcServerConf, func(grpcServer *grpc.Server) {
-		user.RegisterUserServer(grpcServer, server.NewUserServer(ctx))
+		user.RegisterUserServiceServer(grpcServer, server.NewUserServiceServer(ctx))
 
 		if c.Mode == service.DevMode || c.Mode == service.TestMode {
 			reflection.Register(grpcServer)

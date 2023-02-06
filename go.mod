@@ -3,6 +3,7 @@ module go-zero-nacos-demo
 go 1.19
 
 require (
+	github.com/google/uuid v1.3.0
 	github.com/nacos-group/nacos-sdk-go/v2 v2.1.3
 	github.com/zeromicro/go-zero v1.4.4
 	github.com/zeromicro/zero-contrib/zrpc/registry/nacos v0.0.0-20230205070347-9c3b914def24
@@ -26,6 +27,7 @@ require (
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
+	github.com/golang-jwt/jwt/v4 v4.4.3 // indirect
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/go-cmp v0.5.9 // indirect

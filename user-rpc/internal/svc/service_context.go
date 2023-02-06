@@ -1,6 +1,6 @@
 package svc
 
-import "go-zero-nacos-demo/internal/config"
+import "go-zero-nacos-demo/user-rpc/internal/config"
 
 type ServiceContext struct {
 	Config config.Config

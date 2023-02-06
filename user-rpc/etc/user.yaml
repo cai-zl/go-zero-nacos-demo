@@ -1,6 +1,5 @@
-#nacos config
 NacosConfig:
-  DataId: user-rpc.yaml
+  DataId: user.yaml
   Group: DEFAULT_GROUP
   ServerConfigs:
     - IpAddr: 127.0.0.1
@@ -12,3 +11,4 @@ NacosConfig:
     LogDir:
     CacheDir:
     LogLevel: debug
+
