@@ -16,12 +16,12 @@ import (
 	"google.golang.org/grpc/reflection"
 )
 
-var bootstrapFile = flag.String("f", "etc/bootstrap.yaml", "the config file")
+var configFile = flag.String("f", "etc/user.yaml", "the config file")
 
 func main() {
 	flag.Parse()
 	var bootstrapConfig config.BootstrapConfig
-	conf.MustLoad(*bootstrapFile, &bootstrapConfig)
+	conf.MustLoad(*configFile, &bootstrapConfig)
 
 	//解析业务配置
 	var c config.Config
